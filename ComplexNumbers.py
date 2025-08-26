@@ -1,3 +1,9 @@
+# Following chapter 3, section 3.1.1
+# Here I take the mathematical equations for the amplitudes, magnitudes, directions, and probabilities
+# by implementing the equations in Python. Section 3.1.3 walks us step by step through the same
+# calculations by providing the python code. This class is all self-written whereas QuantumStates class
+# follows the instructions from 3.1.3.
+
 import math
 import cmath
 
