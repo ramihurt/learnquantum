@@ -44,9 +44,16 @@ print(math.sqrt(0.3))
 print(math.sqrt(0.7))
 
 # The probability of an outcome is the square of the magnitude of its amplitude.
+
 # The amplitude is described by the complex number
+
 # The general steps are to calculate the magnitude and direction of an amplitude complex number,
 # then calculate the probability of outcomes based on those numbers
+
+# For more complex circuits:
+# 1. Start with the initial state vector (all qubits in |0⟩)
+# 2. Apply each gate in sequence (matrix multiplication)
+# 3. The final state vector contains all the complex amplitudes
 
 print(f"Probability of outcome 0 is {math.pow(0.55,2)}")
 print(f"Probability of outcome 1 is {math.pow(0.84,2)}")
