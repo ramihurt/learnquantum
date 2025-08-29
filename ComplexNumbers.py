@@ -10,7 +10,6 @@ import cmath
 
 x = -0.3415
 y = 0.4282j
-
 z = x + y
 z_type = type(z)
 print(f"Equation type: {z_type}")
@@ -20,6 +19,7 @@ y_squared = math.pow(0.4282, 2)
 
 print(f"x_squared: {x_squared}")
 print(f"y_squared: {y_squared}")
+print(f"{math.sqrt(x_squared+y_squared)}")
 z_real = z.real
 z_imag = z.imag
 
