@@ -1,3 +1,5 @@
+from math import sqrt
+
 from Ch3.util import is_close
 
 # The default state for a qubit system is one where the only possible outcome is a 0 for each qubit.
@@ -12,6 +14,7 @@ state = init_state()
 print(state)
 
 # Gates are used to modify amplitudes
+# some gates change the outcome probabilities, some change the directions, and some change both
 
 def prepare_state(*a):
     state = [a[k] for k in range(len(a))]
@@ -22,3 +25,6 @@ def prepare_state(*a):
 
 list = [0.2958+0.51235j, -0.40311+0.69821j]
 state = prepare_state(*list)
+
+state = [sqrt(0.3), -sqrt(0.7)]
+print(state)

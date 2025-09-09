@@ -1,4 +1,4 @@
-from ch03.util import is_close
+from util import is_close
 
 
 def init_state():
