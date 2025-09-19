@@ -1,11 +1,14 @@
 from util import is_close
 
-
+# The default state for a qubit system is one where the only possible outcome is a 0 for each qubit.
+# The probability of getting a 0 is 100%
 def init_state():
     state = [0 for _ in range(2)]
     state[0] = 1
     return state
 
+# Gates are used to modify amplitudes
+# some gates change the outcome probabilities, some change the directions, and some change both
 
 def prepare_state(*a):
     state = [a[k] for k in range(len(a))]
