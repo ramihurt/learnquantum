@@ -1,7 +1,10 @@
-from math import sqrt, atan2, pi
+from math import sqrt, atan2, pi, acos
 
 from Ch3.util import is_close
 from Ch3.sim_core import *
+from Ch3.sim_gates import *
+from random import choices
+from collections import Counter
 
 def to_table(s, decimals=5):
     table = [
@@ -37,3 +40,45 @@ state = [state[1], state[0]]
 print(state)
 state = [state[1], state[0]]
 print(state)
+
+# 3.3.3 Single-qubit circuits
+state = init_state()
+transform(state, ry(2*pi/3))
+transform(state, x)
+transform(state, phase(pi/3))
+transform(state, h)
+print_state(state) # different results than the example in the book
+
+# 3.4 Simulating measurement of single-qubit system
+samples = choices(range(len(state)), [abs(state[k])**2 for k in range(len(state))], k=10)
+print(samples)
+for (k, v) in Counter(samples).items():
+    print(str(k) + ' -> ' + str(v))
+
+samples = choices(range(len(state)), [abs(state[k])**2 for k in range(len(state))], k=1000)
+for (k, v) in Counter(samples).items():
+    print(str(k) + ' -> ' + str(v))
+
+# 3.4.1 Encoding the uniform distribution in a single-qubit quantum state
+state = init_state()
+transform(state, h)
+print_state(state)
+
+samples = choices(range(len(state)), [abs(state[k])**2 for k in range(len(state))], k=1000)
+for (k, v) in Counter(samples).items():
+    print(str(k) + ' -> ' + str(v))
+
+# 3.5.1
+p = 0.7
+theta = 2*acos(sqrt(p))
+s = init_state()
+transform(s, ry(theta))
+print_state(s)
+
+# 3.5.2
+x = 273.5
+theta = 2*acos(x/1000)
+assert is_close(cos(theta/2), x/1000)
+state = init_state()
+transform(state, ry(theta))
+print_state(state)
